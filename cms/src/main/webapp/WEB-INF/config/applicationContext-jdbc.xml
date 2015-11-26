@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+
+    <bean id="ideaDataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${datasource.driverClassName}"/>
+        <property name="url" value="${idea.url}"/>
+        <property name="username" value="${datasource.username}"/>
+        <property name="password" value="${datasource.password}"/>
+        <!--minIdle: 最小空闲连接-->
+        <property name="minIdle" value="${datasource.minIdle}"/>
+        <!--maxIdle: 最大空闲连接-->
+        <property name="maxIdle" value="${datasource.maxIdle}"/>
+        <!--initialSize: 初始化连接-->
+        <property name="initialSize" value="${datasource.initialSize}"/>
+        <property name="removeAbandonedOnBorrow"  value="true"/>
+        <!--removeAbandonedTimeout: 超时时间(以秒数为单位)-->
+        <property name="removeAbandonedTimeout" value="${datasource.removeAbandonedTimeout}"/>
+        <!-- 连接被泄露时是否打印 -->
+        <property name="logAbandoned" value="true"/>
+        <property name="validationQuery" value="SELECT NOW() FROM DUAL"/>
+    </bean>
+
+    <bean id="wiseksDataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${datasource.driverClassName}"/>
+        <property name="url" value="${wiseks.url}"/>
+        <property name="username" value="${datasource.username}"/>
+        <property name="password" value="${datasource.password}"/>
+        <!--minIdle: 最小空闲连接-->
+        <property name="minIdle" value="${datasource.minIdle}"/>
+        <!--maxIdle: 最大空闲连接-->
+        <property name="maxIdle" value="${datasource.maxIdle}"/>
+        <!--initialSize: 初始化连接-->
+        <property name="initialSize" value="${datasource.initialSize}"/>
+        <property name="removeAbandonedOnBorrow"  value="true"/>
+        <!--removeAbandonedTimeout: 超时时间(以秒数为单位)-->
+        <property name="removeAbandonedTimeout" value="${datasource.removeAbandonedTimeout}"/>
+        <!-- 连接被泄露时是否打印 -->
+        <property name="logAbandoned" value="true"/>
+        <property name="validationQuery" value="SELECT NOW() FROM DUAL"/>
+    </bean>
+
+    <bean id="wiseksPayDataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${datasource.driverClassName}"/>
+        <property name="url" value="${wiseksPay.url}"/>
+        <property name="username" value="${datasource.username}"/>
+        <property name="password" value="${datasource.password}"/>
+        <!--minIdle: 最小空闲连接-->
+        <property name="minIdle" value="${datasource.minIdle}"/>
+        <!--maxIdle: 最大空闲连接-->
+        <property name="maxIdle" value="${datasource.maxIdle}"/>
+        <!--initialSize: 初始化连接-->
+        <property name="initialSize" value="${datasource.initialSize}"/>
+        <property name="removeAbandonedOnBorrow"  value="true"/>
+        <!--removeAbandonedTimeout: 超时时间(以秒数为单位)-->
+        <property name="removeAbandonedTimeout" value="${datasource.removeAbandonedTimeout}"/>
+        <!-- 连接被泄露时是否打印 -->
+        <property name="logAbandoned" value="true"/>
+        <property name="validationQuery" value="SELECT NOW() FROM DUAL"/>
+    </bean>
+
+    <bean id="wiseksUserCenterDataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${datasource.driverClassName}"/>
+        <property name="url" value="${wiseksUserCenter.url}"/>
+        <property name="username" value="${datasource.username}"/>
+        <property name="password" value="${datasource.password}"/>
+        <!--minIdle: 最小空闲连接-->
+        <property name="minIdle" value="${datasource.minIdle}"/>
+        <!--maxIdle: 最大空闲连接-->
+        <property name="maxIdle" value="${datasource.maxIdle}"/>
+        <!--initialSize: 初始化连接-->
+        <property name="initialSize" value="${datasource.initialSize}"/>
+        <property name="removeAbandonedOnBorrow"  value="true"/>
+        <!--removeAbandonedTimeout: 超时时间(以秒数为单位)-->
+        <property name="removeAbandonedTimeout" value="${datasource.removeAbandonedTimeout}"/>
+        <!-- 连接被泄露时是否打印 -->
+        <property name="logAbandoned" value="true"/>
+        <property name="validationQuery" value="SELECT NOW() FROM DUAL"/>
+    </bean>
+
+    <bean id="wiseksFleetyDataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${datasource.driverClassName}"/>
+        <property name="url" value="${fleety.url}"/>
+        <property name="username" value="${datasource.username}"/>
+        <property name="password" value="${third.password}"/>
+        <!--minIdle: 最小空闲连接-->
+        <property name="minIdle" value="${datasource.minIdle}"/>
+        <!--maxIdle: 最大空闲连接-->
+        <property name="maxIdle" value="${datasource.maxIdle}"/>
+        <!--initialSize: 初始化连接-->
+        <property name="initialSize" value="${datasource.initialSize}"/>
+        <property name="removeAbandonedOnBorrow"  value="true"/>
+        <!--removeAbandonedTimeout: 超时时间(以秒数为单位)-->
+        <property name="removeAbandonedTimeout" value="${datasource.removeAbandonedTimeout}"/>
+        <!-- 连接被泄露时是否打印 -->
+        <property name="logAbandoned" value="true"/>
+        <property name="validationQuery" value="SELECT NOW() FROM DUAL"/>
+    </bean>
+
+    <bean id="wiseksCvicseDataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${datasource.driverClassName}"/>
+        <property name="url" value="${cvicse.url}"/>
+        <property name="username" value="${datasource.username}"/>
+        <property name="password" value="${third.password}"/>
+        <!--minIdle: 最小空闲连接-->
+        <property name="minIdle" value="${datasource.minIdle}"/>
+        <!--maxIdle: 最大空闲连接-->
+        <property name="maxIdle" value="${datasource.maxIdle}"/>
+        <!--initialSize: 初始化连接-->
+        <property name="initialSize" value="${datasource.initialSize}"/>
+        <property name="removeAbandonedOnBorrow"  value="true"/>
+        <!--removeAbandonedTimeout: 超时时间(以秒数为单位)-->
+        <property name="removeAbandonedTimeout" value="${datasource.removeAbandonedTimeout}"/>
+        <!-- 连接被泄露时是否打印 -->
+        <property name="logAbandoned" value="true"/>
+        <property name="validationQuery" value="SELECT NOW() FROM DUAL"/>
+    </bean>
+
+    <bean id="wiseksItotemDataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${datasource.driverClassName}"/>
+        <property name="url" value="${itotem.url}"/>
+        <property name="username" value="${datasource.username}"/>
+        <property name="password" value="${third.password}"/>
+        <!--minIdle: 最小空闲连接-->
+        <property name="minIdle" value="${datasource.minIdle}"/>
+        <!--maxIdle: 最大空闲连接-->
+        <property name="maxIdle" value="${datasource.maxIdle}"/>
+        <!--initialSize: 初始化连接-->
+        <property name="initialSize" value="${datasource.initialSize}"/>
+        <property name="removeAbandonedOnBorrow"  value="true"/>
+        <!--removeAbandonedTimeout: 超时时间(以秒数为单位)-->
+        <property name="removeAbandonedTimeout" value="${datasource.removeAbandonedTimeout}"/>
+        <!-- 连接被泄露时是否打印 -->
+        <property name="logAbandoned" value="true"/>
+        <property name="validationQuery" value="SELECT NOW() FROM DUAL"/>
+    </bean>
+
+    <bean id="idea" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="ideaDataSource"/>
+    </bean>
+
+    <bean id="wiseks" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="wiseksDataSource"/>
+    </bean>
+
+    <bean id="wiseks_pay" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="wiseksPayDataSource"/>
+    </bean>
+
+    <bean id="wiseks_user_center" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="wiseksUserCenterDataSource"/>
+    </bean>
+
+    <bean id="wiseks_fleety" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="wiseksFleetyDataSource"/>
+    </bean>
+
+    <bean id="wiseks_cvicse" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="wiseksCvicseDataSource"/>
+    </bean>
+
+    <bean id="wiseks_itotem" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="wiseksItotemDataSource"/>
+    </bean>
+
+    <!--<bean id="application" class="org.think4jframework.context.Think4jContext"></bean>-->
+</beans>
