@@ -1,6 +1,7 @@
 package org.think2.jdbc.filter;
 
 import org.think2.jdbc.SqlExpression;
+import org.think2.jdbc.Think2JdbcException;
 import org.think2.jdbc.bean.Column;
 import org.think2.jdbc.bean.Order;
 
@@ -17,7 +18,7 @@ public class OrderExpression implements SqlExpression {
     }
 
     private OrderType orderType; //排序类型
-    private String keys;  //排序字段名集合
+    private KeyExpression keyExpression; //过滤字段表达式
 
     /***
      * 排序表达式
@@ -27,22 +28,15 @@ public class OrderExpression implements SqlExpression {
      */
     public OrderExpression(OrderType orderType, String... keys) {
         this.orderType = orderType;
-        StringBuilder sql = new StringBuilder();
-        for (int i = 0; i < keys.length; i++) {
-            if (i > 1) {
-                sql.append(",");
-            }
-            sql.append(keys[i]);
-        }
-        this.keys = sql.toString();
+        this.keyExpression = new KeyExpression(keys);
     }
 
     @Override
     public String toSqlString(Map<String, Column> columns) {
         if (OrderType.Asc == orderType) {
-            return keys + " ASC";
+            return this.keyExpression.toSqlString(columns) + " ASC";
         } else {
-            return keys + " DESC";
+            return this.keyExpression.toSqlString(columns) + " DESC";
         }
     }
 
