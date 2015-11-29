@@ -13,7 +13,7 @@ public class Filter {
      * @param filters 过滤条件 eq、like等
      * @return 过滤表达式
      */
-    public static SqlExpression and(SimpleExpression... filters) {
+    public static SqlExpression and(SqlExpression... filters) {
         return new LogicExpression(LogicExpression.LogicType.And, filters);
     }
 
@@ -23,7 +23,7 @@ public class Filter {
      * @param filters 过滤条件 eq、like等
      * @return 过滤表达式
      */
-    public static SqlExpression or(SimpleExpression... filters) {
+    public static SqlExpression or(SqlExpression... filters) {
         return new LogicExpression(LogicExpression.LogicType.Or, filters);
     }
 

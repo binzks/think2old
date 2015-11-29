@@ -1,11 +1,7 @@
 package org.think2.jdbc.filter;
 
 import org.think2.jdbc.SqlExpression;
-import org.think2.jdbc.Think2JdbcException;
 import org.think2.jdbc.bean.Column;
-import org.think2.jdbc.bean.Order;
-
-import java.util.List;
 import java.util.Map;
 
 /**

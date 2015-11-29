@@ -44,18 +44,18 @@ public class LogicExpression implements SqlExpression {
     public String toSqlString(Map<String, Column> columns) {
         StringBuilder sql = new StringBuilder();
         if (LogicType.Or == logicType) {
-            sql.append(" OR");
+            sql.append(" OR ");
         } else {
-            sql.append(" AND");
+            sql.append(" AND ");
         }
         if (sqlExpressions.length > 1) {
-            sql.append(" (");
+            sql.append("(");
         }
         for (SqlExpression sqlExpression : sqlExpressions) {
             sql.append(sqlExpression.toSqlString(columns));
         }
         if (sqlExpressions.length > 1) {
-            sql.append(" )");
+            sql.append(")");
         }
         return sql.toString();
     }

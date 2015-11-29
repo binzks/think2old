@@ -24,12 +24,15 @@ public class MainTest {
 //        sqlPrepare.toInsert(student);
 
         Map<String, Column> map = new HashMap<>();
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 4; i++) {
             Column column = new Column();
             column.setName("column" + i);
             column.setAlias("alias" + i);
             column.setJoinAlias("t" + i);
+            map.put("column" + i, column);
         }
+        SqlExpression sqlExpression = Filter.and(Filter.eq("column1", "aa"), Filter.and(Filter.eq("column2", "bb")));
+        System.out.println(sqlExpression.toSqlString(map));
 
 
     }
