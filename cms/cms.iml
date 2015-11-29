@@ -11,6 +11,16 @@
         </webroots>
       </configuration>
     </facet>
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/src/main/webapp/assets/css/images/border.png</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/config/applicationContext-jdbc.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/config/applicationContext-mvc.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/assets/css/images/border1.png</file>
+        </fileset>
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
@@ -22,6 +32,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="context" />
+    <orderEntry type="module" module-name="jdbc" />
     <orderEntry type="library" name="Maven: javax.persistence:persistence-api:1.0.2" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.37" level="project" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.9" level="project" />

@@ -18,7 +18,7 @@
         <property name="maxIdle" value="${datasource.maxIdle}"/>
         <!--initialSize: 初始化连接-->
         <property name="initialSize" value="${datasource.initialSize}"/>
-        <property name="removeAbandonedOnBorrow"  value="true"/>
+        <property name="removeAbandonedOnBorrow" value="true"/>
         <!--removeAbandonedTimeout: 超时时间(以秒数为单位)-->
         <property name="removeAbandonedTimeout" value="${datasource.removeAbandonedTimeout}"/>
         <!-- 连接被泄露时是否打印 -->
@@ -37,7 +37,7 @@
         <property name="maxIdle" value="${datasource.maxIdle}"/>
         <!--initialSize: 初始化连接-->
         <property name="initialSize" value="${datasource.initialSize}"/>
-        <property name="removeAbandonedOnBorrow"  value="true"/>
+        <property name="removeAbandonedOnBorrow" value="true"/>
         <!--removeAbandonedTimeout: 超时时间(以秒数为单位)-->
         <property name="removeAbandonedTimeout" value="${datasource.removeAbandonedTimeout}"/>
         <!-- 连接被泄露时是否打印 -->
@@ -56,7 +56,7 @@
         <property name="maxIdle" value="${datasource.maxIdle}"/>
         <!--initialSize: 初始化连接-->
         <property name="initialSize" value="${datasource.initialSize}"/>
-        <property name="removeAbandonedOnBorrow"  value="true"/>
+        <property name="removeAbandonedOnBorrow" value="true"/>
         <!--removeAbandonedTimeout: 超时时间(以秒数为单位)-->
         <property name="removeAbandonedTimeout" value="${datasource.removeAbandonedTimeout}"/>
         <!-- 连接被泄露时是否打印 -->
@@ -75,7 +75,7 @@
         <property name="maxIdle" value="${datasource.maxIdle}"/>
         <!--initialSize: 初始化连接-->
         <property name="initialSize" value="${datasource.initialSize}"/>
-        <property name="removeAbandonedOnBorrow"  value="true"/>
+        <property name="removeAbandonedOnBorrow" value="true"/>
         <!--removeAbandonedTimeout: 超时时间(以秒数为单位)-->
         <property name="removeAbandonedTimeout" value="${datasource.removeAbandonedTimeout}"/>
         <!-- 连接被泄露时是否打印 -->
@@ -94,7 +94,7 @@
         <property name="maxIdle" value="${datasource.maxIdle}"/>
         <!--initialSize: 初始化连接-->
         <property name="initialSize" value="${datasource.initialSize}"/>
-        <property name="removeAbandonedOnBorrow"  value="true"/>
+        <property name="removeAbandonedOnBorrow" value="true"/>
         <!--removeAbandonedTimeout: 超时时间(以秒数为单位)-->
         <property name="removeAbandonedTimeout" value="${datasource.removeAbandonedTimeout}"/>
         <!-- 连接被泄露时是否打印 -->
@@ -113,7 +113,7 @@
         <property name="maxIdle" value="${datasource.maxIdle}"/>
         <!--initialSize: 初始化连接-->
         <property name="initialSize" value="${datasource.initialSize}"/>
-        <property name="removeAbandonedOnBorrow"  value="true"/>
+        <property name="removeAbandonedOnBorrow" value="true"/>
         <!--removeAbandonedTimeout: 超时时间(以秒数为单位)-->
         <property name="removeAbandonedTimeout" value="${datasource.removeAbandonedTimeout}"/>
         <!-- 连接被泄露时是否打印 -->
@@ -132,7 +132,7 @@
         <property name="maxIdle" value="${datasource.maxIdle}"/>
         <!--initialSize: 初始化连接-->
         <property name="initialSize" value="${datasource.initialSize}"/>
-        <property name="removeAbandonedOnBorrow"  value="true"/>
+        <property name="removeAbandonedOnBorrow" value="true"/>
         <!--removeAbandonedTimeout: 超时时间(以秒数为单位)-->
         <property name="removeAbandonedTimeout" value="${datasource.removeAbandonedTimeout}"/>
         <!-- 连接被泄露时是否打印 -->
@@ -168,5 +168,5 @@
         <property name="dataSource" ref="wiseksItotemDataSource"/>
     </bean>
 
-    <!--<bean id="application" class="org.think4jframework.context.Think4jContext"></bean>-->
+    <bean id="application" class="org.think2.context.Think2Context"></bean>
 </beans>

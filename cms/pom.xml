@@ -18,6 +18,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.think2</groupId>
+            <artifactId>context</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+        <dependency>
             <groupId>javax.persistence</groupId>
             <artifactId>persistence-api</artifactId>
             <version>1.0.2</version>

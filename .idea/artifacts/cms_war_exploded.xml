@@ -7,6 +7,12 @@
           <element id="module-output" name="cms" />
         </element>
         <element id="directory" name="lib">
+          <element id="archive" name="context-2.0.1.jar">
+            <element id="module-output" name="context" />
+          </element>
+          <element id="archive" name="jdbc-2.0.1.jar">
+            <element id="module-output" name="jdbc" />
+          </element>
           <element id="library" level="project" name="Maven: javax.persistence:persistence-api:1.0.2" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.37" />
           <element id="library" level="project" name="Maven: log4j:log4j:1.2.9" />
