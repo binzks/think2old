@@ -1,6 +1,6 @@
 package org.think2.jdbc;
 
-import org.think2.jdbc.filter.*;
+import org.think2.jdbc.expression.*;
 import org.think2.jdbc.type.LikeType;
 import org.think2.jdbc.type.LogicType;
 

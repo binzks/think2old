@@ -5,7 +5,9 @@ import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
+import org.think2.jdbc.bean.Model;
 import org.think2.jdbc.bean.SqlValues;
+import org.think2.jdbc.expression.InsertExpression;
 
 import java.sql.PreparedStatement;
 import java.sql.Statement;
@@ -19,19 +21,20 @@ public class JdbcModel {
 
     private static Logger logger = Logger.getLogger(JdbcModel.class);  //log4j日志对象
 
+    private Model model;
     private SqlPrepare sqlPrepare;
     private JdbcTemplate jdbcTemplate;
 
     private int insert(Object instance) {
-        SqlValues sqlValues = this.sqlPrepare.toInsert(instance, null);
-        String sql = sqlValues.getSql();
-        List<Object> values = sqlValues.getValues();
+        InsertExpression insertExpression = new InsertExpression(model.getTable(), model.getTableAlias(), instance);
+        String sql = insertExpression.toSqlString(model.getColumns());
+        Object[] values = insertExpression.toValues();
         logger.debug("sql: " + sql + " values: " + new Gson().toJson(values));
         KeyHolder keyHolder = new GeneratedKeyHolder();
         this.jdbcTemplate.update(con -> {
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            for (int i = 0; i < values.size(); i++) {
-                ps.setObject(i + 1, values.get(i));
+            for (int i = 0; i < values.length; i++) {
+                ps.setObject(i + 1, values[i]);
             }
             return ps;
         }, keyHolder);

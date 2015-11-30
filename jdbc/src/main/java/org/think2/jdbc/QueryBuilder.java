@@ -1,8 +1,8 @@
 package org.think2.jdbc;
 
 import org.think2.jdbc.bean.Column;
-import org.think2.jdbc.filter.KeyExpression;
-import org.think2.jdbc.filter.OrderExpression;
+import org.think2.jdbc.expression.KeyExpression;
+import org.think2.jdbc.expression.OrderExpression;
 import org.think2.jdbc.type.OrderType;
 
 import java.util.ArrayList;

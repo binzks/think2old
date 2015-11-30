@@ -1,7 +1,6 @@
 package org.think2.jdbc.type;
 
 import org.think2.jdbc.Think2JdbcException;
-import org.think2.jdbc.filter.LikeExpression;
 
 /**
  * Created by zhoubin on 15/11/30.

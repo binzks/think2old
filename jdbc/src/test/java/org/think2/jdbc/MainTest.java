@@ -1,11 +1,8 @@
 package org.think2.jdbc;
 
 import org.think2.jdbc.bean.Column;
-import org.think2.jdbc.core.MysqlSqlPrepare;
-import org.think2.jdbc.filter.SimpleExpression;
 
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**

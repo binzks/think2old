@@ -1,4 +1,4 @@
-package org.think2.jdbc.filter;
+package org.think2.jdbc.expression;
 
 import org.think2.jdbc.SqlExpression;
 import org.think2.jdbc.Think2JdbcException;

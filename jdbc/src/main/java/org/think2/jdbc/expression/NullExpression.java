@@ -1,4 +1,4 @@
-package org.think2.jdbc.filter;
+package org.think2.jdbc.expression;
 
 import org.think2.jdbc.SqlExpression;
 import org.think2.jdbc.Think2JdbcException;
@@ -8,25 +8,21 @@ import java.util.Map;
 
 /**
  * Created by zhoubin on 15/11/29.
- * between表达式
  */
-public class BetweenExpression implements SqlExpression {
+public class NullExpression implements SqlExpression {
 
-    private String key;  //过滤字段名
-    private Object[] values; //过滤值
+    private String key;  //过滤字段名称
+    private boolean not; //true为not null false为null
 
     /**
-     * between表达式
+     * null过滤表达式
      *
-     * @param key   过滤字段名
-     * @param begin 开始值
-     * @param end   结束值
+     * @param key 过滤字段名称
+     * @param not true为not null false为null
      */
-    public BetweenExpression(String key, Object begin, Object end) {
+    public NullExpression(String key, boolean not) {
         this.key = key;
-        this.values = new Object[2];
-        this.values[0] = begin;
-        this.values[1] = end;
+        this.not = not;
     }
 
     @Override
@@ -37,12 +33,16 @@ public class BetweenExpression implements SqlExpression {
         }
         StringBuilder sql = new StringBuilder();
         sql.append("`").append(column.getTableAlias()).append("`.`").append(column.getAlias()).append("`");
-        sql.append(" BETWEEN ? AND ?");
+        sql.append(" IS");
+        if (not) {
+            sql.append(" NOT");
+        }
+        sql.append(" NULL");
         return sql.toString();
     }
 
     @Override
     public Object[] toValues() {
-        return this.values;
+        return null;
     }
 }
