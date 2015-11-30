@@ -3,9 +3,8 @@ package org.think2.jdbc.filter;
 import org.think2.jdbc.SqlExpression;
 import org.think2.jdbc.Think2JdbcException;
 import org.think2.jdbc.bean.Column;
+import org.think2.jdbc.type.LikeType;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -14,14 +13,9 @@ import java.util.Map;
  */
 public class LikeExpression implements SqlExpression {
 
-    public enum LikeType {
-        Left, Right, All
-    }
-
     private String key; //过滤字段名称
     private Object[] values; //过滤值
     private boolean not; //true为not like false为like
-    private LikeType likeType; //like类型
 
     /**
      * like表达式
@@ -34,7 +28,6 @@ public class LikeExpression implements SqlExpression {
     public LikeExpression(String key, boolean not, Object value, LikeType likeType) {
         this.key = key;
         this.not = not;
-        this.likeType = likeType;
         this.values = new Object[1];
         if (LikeType.Left == likeType) {
             this.values[0] = "%" + value;
@@ -52,7 +45,7 @@ public class LikeExpression implements SqlExpression {
             throw new Think2JdbcException("生成过滤条件失败，字段[" + this.key + "]不存在");
         }
         StringBuilder sql = new StringBuilder();
-        sql.append("`").append(column.getJoinAlias()).append("`.`").append(column.getAlias()).append("`");
+        sql.append("`").append(column.getTableAlias()).append("`.`").append(column.getAlias()).append("`");
         if (not) {
             sql.append(" NOT");
         }

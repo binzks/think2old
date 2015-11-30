@@ -1,5 +1,6 @@
 package org.think2.jdbc;
 
+import org.think2.jdbc.bean.Model;
 import org.think2.jdbc.bean.SqlValues;
 
 /**
@@ -7,7 +8,7 @@ import org.think2.jdbc.bean.SqlValues;
  */
 public interface SqlPrepare {
 
-    SqlValues toInsert(Object instance);
+    SqlValues toInsert(Object instance, Model model);
 
     SqlValues toUpdate(Object instance);
 

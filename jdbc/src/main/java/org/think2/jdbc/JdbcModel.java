@@ -10,7 +10,6 @@ import org.think2.jdbc.bean.SqlValues;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by zhoubin on 15/11/27.
@@ -24,7 +23,7 @@ public class JdbcModel {
     private JdbcTemplate jdbcTemplate;
 
     private int insert(Object instance) {
-        SqlValues sqlValues = this.sqlPrepare.toInsert(instance);
+        SqlValues sqlValues = this.sqlPrepare.toInsert(instance, null);
         String sql = sqlValues.getSql();
         List<Object> values = sqlValues.getValues();
         logger.debug("sql: " + sql + " values: " + new Gson().toJson(values));

@@ -1,9 +1,12 @@
 package org.think2.jdbc;
 
 import org.think2.jdbc.filter.*;
+import org.think2.jdbc.type.LikeType;
+import org.think2.jdbc.type.LogicType;
 
 /**
  * Created by zhoubin on 15/11/28.
+ * 过滤条件生成表达式
  */
 public class Filter {
 
@@ -14,7 +17,7 @@ public class Filter {
      * @return 过滤表达式
      */
     public static SqlExpression and(SqlExpression... filters) {
-        return new LogicExpression(LogicExpression.LogicType.And, filters);
+        return new LogicExpression(LogicType.And, filters);
     }
 
     /**
@@ -24,7 +27,7 @@ public class Filter {
      * @return 过滤表达式
      */
     public static SqlExpression or(SqlExpression... filters) {
-        return new LogicExpression(LogicExpression.LogicType.Or, filters);
+        return new LogicExpression(LogicType.Or, filters);
     }
 
     /**
@@ -155,7 +158,7 @@ public class Filter {
      * @return 过滤表达式
      */
     public static SqlExpression like(String key, Object value) {
-        return new LikeExpression(key, false, value, LikeExpression.LikeType.All);
+        return new LikeExpression(key, false, value, LikeType.Full);
     }
 
     /**
@@ -166,7 +169,7 @@ public class Filter {
      * @return 过滤表达式
      */
     public static SqlExpression lLike(String key, Object value) {
-        return new LikeExpression(key, false, value, LikeExpression.LikeType.Left);
+        return new LikeExpression(key, false, value, LikeType.Left);
     }
 
     /**
@@ -177,7 +180,7 @@ public class Filter {
      * @return 过滤表达式
      */
     public static SqlExpression rLike(String key, Object value) {
-        return new LikeExpression(key, false, value, LikeExpression.LikeType.Right);
+        return new LikeExpression(key, false, value, LikeType.Right);
     }
 
     /**
@@ -188,7 +191,7 @@ public class Filter {
      * @return 过滤表达式
      */
     public static SqlExpression notLike(String key, Object value) {
-        return new LikeExpression(key, true, value, LikeExpression.LikeType.All);
+        return new LikeExpression(key, true, value, LikeType.Full);
     }
 
     /**
@@ -199,7 +202,7 @@ public class Filter {
      * @return 过滤表达式
      */
     public static SqlExpression lNotLike(String key, Object value) {
-        return new LikeExpression(key, true, value, LikeExpression.LikeType.Left);
+        return new LikeExpression(key, true, value, LikeType.Left);
     }
 
     /**
@@ -210,7 +213,7 @@ public class Filter {
      * @return 过滤表达式
      */
     public static SqlExpression rNotLike(String key, Object value) {
-        return new LikeExpression(key, true, value, LikeExpression.LikeType.Right);
+        return new LikeExpression(key, true, value, LikeType.Right);
     }
 
 }

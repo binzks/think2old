@@ -1,8 +1,8 @@
 package org.think2.jdbc.filter;
 
 import org.think2.jdbc.SqlExpression;
-import org.think2.jdbc.Think2JdbcException;
 import org.think2.jdbc.bean.Column;
+import org.think2.jdbc.type.LogicType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,10 +12,6 @@ import java.util.Map;
  * Created by zhoubin on 15/11/29.
  */
 public class LogicExpression implements SqlExpression {
-
-    public enum LogicType {
-        And, Or
-    }
 
     private LogicType logicType; //逻辑类型and或者or
     private Object[] values; //过滤值

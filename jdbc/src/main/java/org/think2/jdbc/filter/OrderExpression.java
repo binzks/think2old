@@ -2,16 +2,14 @@ package org.think2.jdbc.filter;
 
 import org.think2.jdbc.SqlExpression;
 import org.think2.jdbc.bean.Column;
+import org.think2.jdbc.type.OrderType;
+
 import java.util.Map;
 
 /**
  * Created by zhoubin on 15/11/29.
  */
 public class OrderExpression implements SqlExpression {
-
-    public enum OrderType {
-        Desc, Asc
-    }
 
     private OrderType orderType; //排序类型
     private KeyExpression keyExpression; //过滤字段表达式

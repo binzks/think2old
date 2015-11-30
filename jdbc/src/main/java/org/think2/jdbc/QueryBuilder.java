@@ -3,6 +3,7 @@ package org.think2.jdbc;
 import org.think2.jdbc.bean.Column;
 import org.think2.jdbc.filter.KeyExpression;
 import org.think2.jdbc.filter.OrderExpression;
+import org.think2.jdbc.type.OrderType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +53,7 @@ public class QueryBuilder {
      * @param keys order by字段名称，为model定义的字段名称，根据model定义获取字段的实际所属join、expression等
      */
     public void desc(String... keys) {
-        this.orders.add(new OrderExpression(OrderExpression.OrderType.Desc, keys));
+        this.orders.add(new OrderExpression(OrderType.Desc, keys));
     }
 
     /**
@@ -61,7 +62,7 @@ public class QueryBuilder {
      * @param keys order by字段名称，为model定义的字段名称，根据model定义获取字段的实际所属join、expression等
      */
     public void asc(String... keys) {
-        this.orders.add(new OrderExpression(OrderExpression.OrderType.Asc, keys));
+        this.orders.add(new OrderExpression(OrderType.Asc, keys));
     }
 
     /**

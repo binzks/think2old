@@ -8,19 +8,17 @@ public class Column {
 
     private String name; //列的名称，对应数据库表的字段名称
 
-    private String joinName; //关联名称，如果列是关联表的字段，则填写关联的名称获取关联表别名
+    private String alias; //列的别名，用于关联查询重复的时候定义别名，如果没有定义，则别名与name一致
 
-    private String alias; //列的别名，用于数据库查询的时候使用别名
-
-    private String joinAlias; //列所对应的真正数据库表在关联中的别名
+    private String tableAlias; //列所属的表的别名
 
     private String expression; //表达式，表达式例子count(?)，生成字段的时候将字段替换?
 
     private String comment; //字段注释
 
-    private String type;  //字段类型 varchar int等数据库类型
+    private String type;  //字段数据库类型
 
-    private int size;  //字段长度
+    private String size;  //字段长度
 
     private Boolean nullAble; //字段是否可空，true可以，false不可空
 
@@ -34,14 +32,6 @@ public class Column {
         this.name = name;
     }
 
-    public String getJoinName() {
-        return joinName;
-    }
-
-    public void setJoinName(String joinName) {
-        this.joinName = joinName;
-    }
-
     public String getAlias() {
         return alias;
     }
@@ -50,12 +40,12 @@ public class Column {
         this.alias = alias;
     }
 
-    public String getJoinAlias() {
-        return joinAlias;
+    public String getTableAlias() {
+        return tableAlias;
     }
 
-    public void setJoinAlias(String joinAlias) {
-        this.joinAlias = joinAlias;
+    public void setTableAlias(String tableAlias) {
+        this.tableAlias = tableAlias;
     }
 
     public String getExpression() {
@@ -82,11 +72,11 @@ public class Column {
         this.type = type;
     }
 
-    public int getSize() {
+    public String getSize() {
         return size;
     }
 
-    public void setSize(int size) {
+    public void setSize(String size) {
         this.size = size;
     }
 

@@ -4,8 +4,6 @@ import org.think2.jdbc.SqlExpression;
 import org.think2.jdbc.Think2JdbcException;
 import org.think2.jdbc.bean.Column;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -38,7 +36,7 @@ public class BetweenExpression implements SqlExpression {
             throw new Think2JdbcException("生成过滤条件失败，字段[" + this.key + "]不存在");
         }
         StringBuilder sql = new StringBuilder();
-        sql.append("`").append(column.getJoinAlias()).append("`.`").append(column.getAlias()).append("`");
+        sql.append("`").append(column.getTableAlias()).append("`.`").append(column.getAlias()).append("`");
         sql.append(" BETWEEN ? AND ?");
         return sql.toString();
     }

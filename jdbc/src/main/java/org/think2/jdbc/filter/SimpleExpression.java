@@ -4,8 +4,6 @@ import org.think2.jdbc.SqlExpression;
 import org.think2.jdbc.Think2JdbcException;
 import org.think2.jdbc.bean.Column;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -30,7 +28,7 @@ public class SimpleExpression implements SqlExpression {
         if (null == column) {
             throw new Think2JdbcException("生成过滤条件失败，字段[" + this.key + "]不存在");
         }
-        return String.format("`%s`.`%s` %s ?", column.getJoinAlias(), column.getAlias(), this.op);
+        return String.format("`%s`.`%s` %s ?", column.getTableAlias(), column.getAlias(), this.op);
     }
 
     @Override

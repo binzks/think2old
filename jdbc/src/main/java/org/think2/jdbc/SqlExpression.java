@@ -2,7 +2,6 @@ package org.think2.jdbc;
 
 import org.think2.jdbc.bean.Column;
 
-import java.util.List;
 import java.util.Map;
 
 /**

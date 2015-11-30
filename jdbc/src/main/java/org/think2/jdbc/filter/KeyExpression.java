@@ -30,7 +30,7 @@ public class KeyExpression implements SqlExpression {
             if (i > 0) {
                 sql.append(",");
             }
-            sql.append("`").append(column.getJoinAlias()).append("`.`").append(column.getAlias()).append("`");
+            sql.append("`").append(column.getTableAlias()).append("`.`").append(column.getAlias()).append("`");
 
         }
         return sql.toString();
