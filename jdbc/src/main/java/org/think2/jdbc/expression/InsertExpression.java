@@ -20,6 +20,13 @@ public class InsertExpression implements SqlExpression {
     private String table;       //新增表名
     private String tableAlias;  //新增表别名，用于判断列是否属于新增表
 
+    /***
+     * 初始化新增表达式
+     *
+     * @param table      新增表名
+     * @param tableAlias 新增表别名，用于判断列是否属于新增表
+     * @param instance   新增对象
+     */
     public InsertExpression(String table, String tableAlias, Object instance) {
         this.table = table;
         this.tableAlias = tableAlias;
